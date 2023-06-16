@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../feature/cart/cartSlice";
-import { Button, ButtonGroup, Card } from "react-bootstrap";
+import { Button, ButtonGroup, Card, Col } from "react-bootstrap";
 
 export default function Item({ item }) {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ export default function Item({ item }) {
           {item.description}
           <br />
           Price: RM{item.price}{" "}
-          <div className="mt-3 mb-3 d-flex justify-content-between align-items-center">
+          <Col className="mt-3 mb-3 d-flex justify-content-between align-items-center">
             <ButtonGroup size="sm">
               <Button variant="outline-secondary" onClick={decreaseQuantity}>
                 -
@@ -59,7 +59,7 @@ export default function Item({ item }) {
             {quantity > 0 && (
               <span className="text-danger">RM{item.price * quantity}</span>
             )}
-          </div>
+          </Col>
         </Card.Text>
       </Card.Body>
     </Card>
