@@ -20,7 +20,7 @@ export default function Item({ item }) {
         <Card.Text>
           {item.description}
           <br />
-          Price: {item.price}
+          Price: RM{item.price}
         </Card.Text>
         <Button variant="primary" onClick={addItem}>
           Add to cart
