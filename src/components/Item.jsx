@@ -36,7 +36,7 @@ export default function Item({ item }) {
       />
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
-        <Card.Text>
+        <div>
           {item.description}
           <br />
           Price: RM{item.price}{" "}
@@ -60,7 +60,7 @@ export default function Item({ item }) {
               <span className="text-danger">RM{item.price * quantity}</span>
             )}
           </Col>
-        </Card.Text>
+        </div>
       </Card.Body>
     </Card>
   );
