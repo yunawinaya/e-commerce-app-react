@@ -1,14 +1,6 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { removeFromCart } from "../feature/cart/cartSlice";
+import { Card, Col, Row } from "react-bootstrap";
 
 export default function CartItem({ item }) {
-  const dispatch = useDispatch();
-
-  const removeItem = () => {
-    dispatch(removeFromCart(item));
-  };
-
   return (
     <Card className="mb-2">
       <Card.Body>
@@ -25,11 +17,6 @@ export default function CartItem({ item }) {
               {item.amount} x {item.name}
             </Card.Title>
             <Card.Text>{item.description}</Card.Text>
-            <Card.Text>Price: {item.price}</Card.Text>
-            <Button variant="danger" onClick={removeItem}>
-              <i className="bi bi-trash me-1"></i>
-              Remove
-            </Button>
           </Col>
         </Row>
       </Card.Body>

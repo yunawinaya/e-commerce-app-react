@@ -1,16 +1,20 @@
-import { Route } from "react-router-dom";
-import { Badge, Container, Nav, Navbar } from "react-bootstrap";
-import { Provider, useSelector } from "react-redux";
-import { BrowserRouter, Outlet, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Provider } from "react-redux";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import store from "./store";
+import { useSelector } from "react-redux";
+import { Badge } from "react-bootstrap";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 
 export function Layout() {
   const cart = useSelector((state) => state.cart);
+
   const totalItemsInCart = cart.reduce((accumulator, item) => {
     return accumulator + item.amount;
   }, 0);
+
   return (
     <>
       <Navbar bg="light" variant="light">

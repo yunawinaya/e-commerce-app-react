@@ -13,7 +13,7 @@ export default function Item({ item }) {
       <Card.Img
         variant="top"
         src={`https://picsum.photos/id/${item.id}/200`}
-        alt={item.title}
+        alt={item.name}
       />
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
